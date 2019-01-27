@@ -26,7 +26,6 @@ var myVue = new Vue({
             .then(realData => {
 
                 this.bookarray = realData.books;
-                //            this.printBooks(bookarray);
                 this.box();
                 this.searchFilter();
                         
@@ -34,11 +33,11 @@ var myVue = new Vue({
             })
 
     },
-    created()  {
-                    window.addEventListener('resize', this.handleResize)
-                    this.handleResize();
-                
-    },
+//    created()  {
+//                    window.addEventListener('resize', this.handleResize)
+//                    this.handleResize();
+//                
+//    },
     methods: {
 
         box: function () {
@@ -61,27 +60,36 @@ var myVue = new Vue({
         searchFilter: function () {
             this.noResults = false;
             this.yourInput = this.inputValue.toUpperCase();
-            this.filteredBooks = this.bookarray.filter((book) => {
-                return JSON.stringify(book).toUpperCase().includes(this.yourInput)>0
+            
+
+            
+            this.filteredBooks = this.bookarray.filter(book => {
+                return JSON.stringify(book).toUpperCase().includes(this.yourInput)
+                
+                
+           
+                
+                // only returns the books that pass the test
+                // if there is no User Input it applies to all, because all books have empty spaces
+                
             })
             
        if (this.filteredBooks.length == 0){
            this.noResults = true;
            
        }
-
-           },
             
-//            console.log(this.filteredBooks);   
+
+           }
 
           
 
 
-        
-        handleResize: function () {
-                            this.myWindow.width = window.innerWidth;
-                            this.myWindow.height = window.innerHeight;
-                        }
+//        
+//        handleResize: function () {
+//                            this.myWindow.width = window.innerWidth;
+//                            this.myWindow.height = window.innerHeight;
+//                        }
 
 
     }
