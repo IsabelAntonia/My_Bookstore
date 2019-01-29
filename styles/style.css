@@ -1,128 +1,93 @@
-.flip-container {
-    perspective: 1000px;
+#searchLogo {
+    
+    height: 10vh;
+    width: auto;
+
 }
 
-/* flip the pane when hovered */
-
-.flip-container:hover .flipper,
-.flip-container.hover .flipper {
-    transform: rotateY(180deg);
+#myInput {
+    
+    border: 2px solid black;
+    width: 15vw;
+    height: 5vh;
 }
 
-.flip-container,
-.front,
-.back {
-    width: 300px;
+#bookImage{
+    
     height: 400px;
-    margin-bottom: 40px;
+    width: 300px;
+}
+
+.container-fluid {
+    padding: 0 !important;
+}
 
 
+
+p {
+    font-size: 13px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+
+
+
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 300px;
+	height: 400px;
 }
 
 /* flip speed goes here */
-
 .flipper {
-    transition: 0.6s;
-    transform-style: preserve-3d;
-    position: relative;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
 }
 
 /* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
 
-.front,
-.back {
-    backface-visibility: hidden;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    margin-right: 20px;
-    margin-left;
-    20px;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 /* front pane, placed above back */
-
 .front {
-    z-index: 2;
-    /* for firefox 31 */
-    transform: rotateY(0deg);
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
 }
 
 /* back, initially hidden pane */
-
 .back {
-    transform: rotateY(180deg);
+	transform: rotateY(180deg);
     text-align: center;
-}
-
-#img {
     height: 400px;
     width: 300px;
-}
-
-.back {
-
-
-    background-color: #ADD8E6;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
-
+  
 }
 
-input {
-    height: 50px;
-    width: 300px;
-    border: 5px solid black;
-}
-
-
-
-#styleGreySection {
-    min-height: 10vh;
-    width: 100vw;
-    margin: 0;
-
-
-}
 
 .notMe {
     align-self: flex-end;
-
-}
-
-
-#headerXs {
-    height: 20vh;
-    width: auto;
-
-}
-
-.thisRow {
-    height: 10vh;
-    width: 100vw;
-    margin-bottom: 5vh;
-}
-
-.resize {
-    height: 10vh;
-    width: auto;
-}
-
-.container {
-    height: 100vh;
-    width: 100vw !important;
-    margin: 0;
-    padding: 0;
-
-}
-
-
-header {
-    width: 100vw;
-    margin: 0 !important;
 }
