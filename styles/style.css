@@ -8,8 +8,16 @@
 #myInput {
     
     border: 2px solid black;
-    width: 15vw;
+    width: 250px;
     height: 5vh;
+}
+
+
+#myInputSmall {
+    
+    border: 2px solid black;
+    width: 200px;
+    height: 6vh;
 }
 
 #bookImage{
@@ -23,6 +31,10 @@
 }
 
 
+html, body{
+    width: 100% !important;
+    overflow: auto;
+}
 
 p {
     font-size: 13px;
