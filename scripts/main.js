@@ -4,6 +4,7 @@
 var app = new Vue({
   el: '#app',
   data: {
+      
     bookArray: {},
       userInput: '',
       filteredBooks: [],
